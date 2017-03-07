@@ -34,6 +34,9 @@ public class CounterService {
                 result.put("Create relationship commands", source.get(key));
             } else if (Objects.equals("counter_id", key)) {
                 result.put("Affected date", source.get(key));
+            } else if (Objects.equals("CREATE_RELATIONSHIPS_INNER_COMMAND", key) ||
+                    Objects.equals("DELETE_RELATIONSHIPS_INNER_COMMAND", key)) {
+                //ignore
             } else {
                 result.put(key, source.get(key));
             }
